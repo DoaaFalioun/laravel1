@@ -15,8 +15,28 @@ class UserAuth extends Controller
 
     }
 
-    function list()
+    public function home()
     {
-        return view('list');
+        return view('home');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function products()
+    {
+        return view('products');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function aboutUs()
+    {
+        return view('aboutUs');
     }
 }

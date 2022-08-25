@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserAuth;
+
+use App\Http\Controllers\FrontController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +15,19 @@ use App\Http\Controllers\UserAuth;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
-Route::view('list','list');
+Route::get('/list', function () {
+    return view('list');
+});
+Route::get('/navbar', function () {
+    return view('navbar');
+});
+Route::get('/reservation', function () {
+    return view('reservation');
+});
 Route::post("user",[UserAuth::class,'userLogin']);
 //Route::view("login",'login');
 Route::view("profile",'profile');
@@ -40,3 +51,7 @@ Route::get('/logout', function () {
     return redirect('login');
 
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

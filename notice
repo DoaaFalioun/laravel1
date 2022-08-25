@@ -1,1 +1,17 @@
 php artisan make:controller userAuth   //make controller
+
+
+
+
+
+
+
+
+//refresh database
+php artisan migrate:fresh
+
+php artisan migrate:fresh --seed
+
+
+//creat table
+ php artisan make:migration create_table_table
